@@ -34,8 +34,8 @@ pngquant \
 COPY php-fpm.conf  /etc/php7/php-fpm.conf
 COPY php-fpm.d/*   /etc/php7/php-fpm.d/
 
-RUN sed -i "s/;date.timezone =/date.timezone = Europe\/Amsterdam/" /etc/php/7.0/fpm/php.ini
-RUN sed -i "s/;date.timezone =/date.timezone = Europe\/Amsterdam/" /etc/php/7.0/cli/php.ini
+RUN sed -i "s/;date.timezone =/date.timezone = Europe\/Amsterdam/" /etc/php7/php.ini
+RUN sed -i "s/;date.timezone =/date.timezone = Europe\/Amsterdam/" /etc/php7/php.ini
 
 ADD app/ /app
 
