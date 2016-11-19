@@ -32,7 +32,7 @@ pngquant \
 && ln -s /usr/bin/php7 /usr/bin/php
 
 COPY php-fpm.conf  /etc/php7/php-fpm.conf
-COPY pool.d/*      /etc/php7/php-fpm.d/
+COPY php-fpm.d/*   /etc/php7/php-fpm.d/
 
 RUN sed -i "s/;date.timezone =/date.timezone = Europe\/Amsterdam/" /etc/php/7.0/fpm/php.ini
 RUN sed -i "s/;date.timezone =/date.timezone = Europe\/Amsterdam/" /etc/php/7.0/cli/php.ini
