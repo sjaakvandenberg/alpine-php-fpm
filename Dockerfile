@@ -29,8 +29,7 @@ php7-xml \
 php7-zlib \
 pngquant \
 && rm -rf /var/cache/apk \
-&& ln -s /usr/bin/php7 /usr/bin/php \
-&& ln -sf /dev/stdout /var/log/php7/php-fpm.log
+&& ln -s /usr/bin/php7 /usr/bin/php
 
 COPY php-fpm.conf  /etc/php7/php-fpm.conf
 COPY php-fpm.d/*   /etc/php7/php-fpm.d/
