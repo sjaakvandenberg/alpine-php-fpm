@@ -38,8 +38,11 @@ COPY php-fpm.conf  /etc/php7/php-fpm.conf
 COPY php-fpm.d/*   /etc/php7/php-fpm.d/
 COPY scripts/*     /usr/local/bin/
 COPY init.sh       /init.sh
+COPY app/          /app
 
-ADD app/ /app
+WORKDIR /app
+
+RUN wp core download
 
 EXPOSE 9000
 
