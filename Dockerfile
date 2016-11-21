@@ -31,11 +31,12 @@ pngquant \
 && rm -rf /var/cache/apk \
 && ln -s /usr/bin/php7 /usr/bin/php \
 && sed -i "s/;date.timezone =/date.timezone = Europe\/Amsterdam/" /etc/php7/php.ini \
-&& curl -sL https://goo.gl/FJNWum -o /usr/local/bin/wp-cli \
-&& chmod +x /usr/local/bin/wp-cli
+&& curl -sL https://goo.gl/FJNWum -o /usr/bin/wp-cli \
+&& chmod +x /usr/bin/wp-cli
 
 COPY php-fpm.conf  /etc/php7/php-fpm.conf
 COPY php-fpm.d/*   /etc/php7/php-fpm.d/
+COPY scripts/*     /usr/local/bin/
 COPY init.sh       /init.sh
 
 ADD app/ /app
