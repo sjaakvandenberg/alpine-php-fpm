@@ -40,9 +40,7 @@ COPY scripts/*     /usr/local/bin/
 COPY init.sh       /init.sh
 COPY app/          /app
 
-WORKDIR /app
-
-RUN wp core download
+ADD https://wordpress.org/latest.tar.gz /app
 
 EXPOSE 9000
 
