@@ -29,7 +29,10 @@ php7-xml \
 php7-zlib \
 pngquant \
 && rm -rf /var/cache/apk \
-&& ln -s /usr/bin/php7 /usr/bin/php
+&& ln -s /usr/bin/php7 /usr/bin/php \
+&& curl -sL https://goo.gl/FJNWum -o /usr/bin/wp-cli \
+&& chmod +x /usr/local/bin/* /usr/bin/wp-cli
+
 
 COPY php-fpm.conf  /etc/php7/php-fpm.conf
 COPY php-fpm.d/*   /etc/php7/php-fpm.d/
